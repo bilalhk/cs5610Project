@@ -5,10 +5,9 @@
 	
 	function sidebarController($scope, $location) {
 		
-		var sidebarNavs = [{name: "Home", link: "#/home"},
-						   {name: "Profile", link: "#/profile"},
-						   {name: "Admin", link: "#/admin"},
-						   {name: "Forms", link: "#/forms"}];
+		var sidebarNavs = [{name: "Profile", link: "#/profile"},
+						   {name: "Start Game", link: "#/new_game"},
+						   {name: "Leaderboard", link: "#/leaderboard"}];
 		
 		$scope.sidebarNavs = sidebarNavs;
 		$scope.$location = $location;

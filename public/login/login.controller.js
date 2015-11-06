@@ -6,7 +6,7 @@
 		$rootScope.user = null;
 		
 		$scope.login = function() {
-			$rootScope.user = {username: $scope.user};
+			$rootScope.user = {username: $scope.username};
 			$location.url("/profile");
 		}
 		
