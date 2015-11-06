@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" ng-app="YeOldArena">
+  
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.min.js"></script>
+    
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="login/login.controller.js"></script>
+    <script src="header/header.controller.js"></script>
+    <script src="sidebar/sidebar.controller.js"></script>
+    
+    <title>Ye Old Arena!</title>
+  </head>
+  
+  <body>
+    
+    <!-- Navbar -->
+    <div ng-include="'header/header.view.html'" ng-controller="HeaderController"></div>
+    
+    <div class="container-fluid">
+      <div class="row">
+        
+        <!-- Sidebar -->
+        <div class="col-sm-2 col-md-1 sidebar" ng-include="'sidebar/sidebar.view.html'" ng-controller="SidebarController" ng-if="user"></div>
+        
+        <!-- Main -->
+        <div class="col-sm-10 col-md-11 col-sm-offset-2 col-md-offset-1 main" ng-view></div>
+        
+      </div>
+    </div>
+    
+  </body>
+    
+</html>
+
