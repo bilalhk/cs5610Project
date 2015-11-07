@@ -3,12 +3,18 @@
 	
 	angular.module("YeOldArena").config(function($stateProvider, $urlRouterProvider) {
 		
-		$urlRouterProvider.otherwise("/login");
+		$urlRouterProvider.otherwise("/home");
 		
 		$stateProvider
-			.state("login", {
-				url: "/login",
-				templateUrl: "login/login.view.html"
+			.state("home", {
+				url: "/home",
+				templateUrl: "home/home.view.html"
+			})
+			.state("home.login", {
+				templateUrl: "home/login/login.view.html"
+			})
+			.state("home.register", {
+				templateUrl: "home/register/register.view.html"
 			})
 			.state("profile", {
 				url: "/profile",
@@ -27,6 +33,9 @@
 			})
 			.state("leaderboard.characters", {
 				templateUrl: "leaderboard/characters/characters.view.html"
+			})
+			.state("register", {
+				templateUrl: "register/register.view.html"
 			});
 		
 		
