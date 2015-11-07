@@ -40,6 +40,10 @@
 			.state("characterGeneration", {
 				url: "/character_generation",
 				templateUrl: "character_generation/character_gen.view.html"
+			})
+			.state("abilityGeneration", {
+				url: "/ability_generation",
+				templateUrl: "ability_generation/ability_gen.view.html"
 			});
 		
 		
