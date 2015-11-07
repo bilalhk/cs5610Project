@@ -1,6 +1,6 @@
 (function(){
 	"use strict"
 	
-	angular.module("YeOldArena",["ngRoute"]);
+	angular.module("YeOldArena",["ui.router"]);
 	
 })();
