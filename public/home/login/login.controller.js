@@ -7,7 +7,12 @@
 		
 		$scope.login = function() {
 			$rootScope.user = {username: $scope.username};
-			$state.go("profile");
+			
+			if ($scope.username == "admin") {
+				$state.go("characterGeneration");
+			} else {
+				$state.go("profile");
+			}
 		}
 		
 	})

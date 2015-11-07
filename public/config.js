@@ -36,6 +36,10 @@
 			})
 			.state("register", {
 				templateUrl: "register/register.view.html"
+			})
+			.state("characterGeneration", {
+				url: "/character_generation",
+				templateUrl: "character_generation/character_gen.view.html"
 			});
 		
 		

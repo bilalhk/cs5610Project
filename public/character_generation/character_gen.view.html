@@ -1,7 +1,7 @@
-<div class="container-fluid" ng-controller="NewGameController">
+<div class="container-fluid" ng-controller="CharacterGenerationController">
 	<div class="row">
 		<div class="col-sm-12">
-			<h2>Start New Game</h2>
+			<h2>Generate Character</h2>
 		</div>
 		
 		<!-- Searchbar -->
@@ -10,7 +10,5 @@
 		<!-- Character card -->
 		<div class="col-sm-12 col-md-3" ng-include="'character_card/card.view.html'" ng-controller="CardController"></div>
 		
-		<!-- Ability Selector -->
-		<div class="col-sm-12 col-md-9" ng-include="'new_game/ability_selector/ability.view.html'" ng-controller="AbilitySelectorController"></div>
-	</div>	
+	</div>
 </div>

@@ -1,16 +1,22 @@
 (function() {
 	"use strict"
 	
-	angular.module("YeOldArena").controller("SidebarController", sidebarController);
-	
-	function sidebarController($scope, $location) {
+	angular.module("YeOldArena").controller("SidebarController", function($scope, $rootScope, $location) {
 		
-		var sidebarNavs = [{name: "Profile", link: "#/profile"},
-						   {name: "Start Game", link: "#/new_game"},
-						   {name: "Leaderboard", link: "#/leaderboard"}];
+		var clientSidebarNavs = [{name: "Profile", link: "#/profile"},
+								 {name: "Start Game", link: "#/new_game"},
+								 {name: "Leaderboard", link: "#/leaderboard"}];
+								 
+		var adminSidebarNavs = [{name: "Char. Gen.", link: "#/character_generation"},
+								{name: "Ability Gen.", link: "#/ability_generation"}];
 		
-		$scope.sidebarNavs = sidebarNavs;
+		if ($rootScope.user.username == "admin") {
+			$scope.sidebarNavs = adminSidebarNavs;
+		} else {
+			$scope.sidebarNavs = clientSidebarNavs;
+		}
+		
 		$scope.$location = $location;
-	}
+	});
 	
 })();
