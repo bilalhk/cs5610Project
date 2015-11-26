@@ -36,16 +36,26 @@
 				url: "/duel",
 				templateUrl: "views/duel/duel.view.html",
 				controller: "DuelController",
-				controllerAs: "duelModel"
+				controllerAs: "duelModel",
+				params: {
+					world: null
+				}
 			})
-			.state("duel.character_cards", {
+			.state("duel.cardsDisplayed", {
 				views: {
 					'thisPlayer': {
-						templateUrl: "views/character_card/card.view.html" 
+						templateUrl: "views/character_card/card.view.html",
+						controller: "PlayerCharacterController",
+						controllerAs: "cardModel"
 					},
 					'otherPlayer': {
-						templateUrl: "views/character_card/card.view.html"
+						templateUrl: "views/character_card/card.view.html",
+						controller: "OpponentCharacterController",
+						controllerAs: "cardModel"
 					}
+				},
+				params: {
+					world: null
 				}
 			})
 			.state("leaderboard", {

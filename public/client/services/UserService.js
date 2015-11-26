@@ -11,8 +11,7 @@
 		
 		// Credentials -> Promise(User)
 		function findUserByCredentials(credentials) {
-			var deferred = $q.defer();
-			
+			var deferred = $q.defer();	
 			deferred.resolve(new User(credentials.username, "user"));
 			
 			return deferred.promise;

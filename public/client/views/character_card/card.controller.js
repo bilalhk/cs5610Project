@@ -3,13 +3,15 @@
 	
 	angular.module("YeOldArena").controller("CardController", cardController);
 	
-	function cardController() {
+	function cardController($scope) {
 		
-		this.attributes = [{name: "HP", value: 95},
-							 {name: "Speed", value: 66},
-							 {name: "Mana", value: 82},
-							 {name: "Attack", value: 35},
-							 {name: "Defense", value: 75}];
+		var model = this;
+		
+		$scope.$on("characterGeneration", function(event, character) {
+			event.preventDefault();
+			model.character = character;
+		})
+		
 	}
 	
 })();

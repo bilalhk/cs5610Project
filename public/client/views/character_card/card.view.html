@@ -1,7 +1,7 @@
-<div class="container-fluid" ng-controller="CardController as cardModel">
+<div class="container-fluid">
 	<div class="bordered">
 		<img src="views/images/avatar_blank.jpg" class="img-responsive center-block">
-		<div class="row text-center" ng-repeat="attribute in cardModel.attributes">
+		<div class="row text-center" ng-repeat="attribute in cardModel.character.attributes">
 			<h4 class="col-xs-6">{{attribute.name}}</h4>
 			<h4 class="col-xs-6">{{attribute.value}}</h4>
 		</div>

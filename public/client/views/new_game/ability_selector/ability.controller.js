@@ -3,17 +3,25 @@
 	
 	angular.module("YeOldArena").controller("AbilitySelectorController", abilitySelectorController);
 	
-	function abilitySelectorController() {
+	function abilitySelectorController($scope, abilityService) {
 	
-		this.availableAbilities = [{name: "Axe Throw"},
-									 {name: "Heat Vision"},
-									 {name: "Steel-toed Boot"},
-									 {name: "Baseball Bat"}];
+		var model = this;
 		
-		this.selectedAbilities = [{name: "Heat Vision"},
-									{name: "Baseball Bat"}];
-									
-		this.wisdomPoints = 21;
+		abilityService.findAvailableAbilities().then(function(abilities) {
+			model.availableAbilities = abilities;
+		})
+		
+		$scope.$on("characterGeneration", function(event, character) {
+			event.preventDefault();
+			model.character = character;
+		})
+		
+		model.addAbility = function(index) {
+			var selectedAbility = model.availableAbilities[index];
+			model.availableAbilities.splice(index, 1);
+			model.character.addAbility(selectedAbility);
+		}
+		
 	}
 	
 })();
